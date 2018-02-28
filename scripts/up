@@ -1,0 +1,54 @@
+#!/usr/bin/perl -w
+
+use PerlLib::SourceManager;
+
+$criticdir = "/var/lib/critic";
+if (! -f $criticdir) {
+  $criticdir = "/var/lib/myfrdcsa/codebases/internal/critic/archives";
+}
+
+my $i = 1;
+if (@ARGV) {
+  $i = $ARGV[0];
+} else {
+  while (-d "$criticdir/$i") {
+    ++$i;
+  }
+}
+$criticdir = "$criticdir/$i";
+system "mkdir $criticdir";
+
+if (1) {
+  $sources = "http://www.uh-oh.com/movies/main.php";
+  system "lynx -source $sources > $criticdir/source.txt";
+}
+
+my @sites;
+
+$contents = `cat $criticdir/source.txt`;
+foreach $line (split /\n/,$contents) {
+  if ($line =~ /http:/) {
+    $line =~ s/^.*(http:\/\/[^"]+)".*$/$1/;
+    if ($line =~ /^http/) {
+      $dir = $line;
+      if ($dir =~ s/^http:\/\/([^\/]+)\/.*/$1/) {
+	if (! -d "$criticdir/cache/$dir") {
+	  push @sites, $line;
+	} else {
+	  print "Site already indexed: $line\n";
+	}
+      }
+    }
+  }
+}
+
+if (1) {
+  my $OUT;
+  open(OUT,">$criticdir/index.txt") or die "argh!";
+  print OUT join("\n",@sites);
+  close(OUT);
+  system "mkdir $criticdir/cache $criticdir/mycache";
+  chdir "$criticdir/cache";
+  
+  system "wget -rl1 -Ampg,mpeg,avi -T10 -t1 -i $criticdir/index.txt"
+}

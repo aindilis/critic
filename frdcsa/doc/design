@@ -1,0 +1,9 @@
+I suppose the major purpose of critic is to do the following:
+
+Go through a list of items and interrelate it, that is, allow the user
+to view the  item if it needs  a viewer, or compare the  items if they
+need  to be  compared  somehow like  "command  $item1 $item2  $item3".
+Concurrently,  the  user may  apply  relations  between  the items  by
+selecting  them,  perhaps in  order,  with  a  relation, and  clicking
+assert, etc.  So, should have  multiple queries, etc., and the ability
+to select items.

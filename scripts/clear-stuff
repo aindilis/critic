@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm mycache/.item
+rm mycache/.item.out

@@ -1,0 +1,56 @@
+################################################################################
+# Documentation
+################################################################################
+
+# system for interactive rating of large amounts of similar files
+# store a count of how often a given person has seen a particular file
+
+# determine what the person thinks of the system wrt to various purposes
+
+# package Clairvoyance::Review;
+
+# parse command line options to determine which particular type we want
+
+  # randomize playlist with items with higher scores having higher probabilities of being shown.
+#   foreach my $file (sort {($rating{$b}||0) <=> ($rating{$a}||0)} @playlist) {
+#     system "mplayer $file -loop 0 -fs -zoom";
+#   }
+
+  # or record which items have been seen recently, and show the ones that haven't
+
+#   Here are some  neat thoughts.  Basically, one is  wondering how to
+#   go  about  indexing  versus  viewing.   Haha,  exploration  versus
+#   exploitation.   But  the  problem  is  really the  same.   Let  me
+#   explain.  The goal is to get  the user what they want, which is in
+#   this case  sexual satisfaction, or  in other cases  programs.  So,
+#   for one,  if a  user has seen  a video  before, they will  be less
+#   interested in seeing it again.  If a long period has elapsed, they
+#   might want to see it again at some point.  But a static order does
+#   nothing.  Therefore  the number of times  a user has  seen a video
+#   should be recorded.
+
+#   A new tradeoff  is introduced then, whether the  user should watch
+#   an existing video,  or rate a new one.   This can be characterized
+#   by  the  expectated current  rating  of  the  new video,  and  its
+#   relation to other videos with current ratings calculated from user
+#   rating history, delay, viewing times,  etc, and thus we can define
+#   a criteria under which the user would rather rate a new video then
+#   watch an old one, as well as how to order the existing videos.
+
+#   Lastly, if no  new videos exist, the user may  want to download some
+#   more videos.  Also,  excessively bad videos may be  cleaned from the
+#   cache, and  as well, all features  of all videos can  be combined to
+#   create a prediction  for rating, so as to steer  which videos can be
+#   expected to be rated highly.
+
+#   If only  videos with  a high expectation  of being rated  highly are
+#   shown, then the  entropy gain of the experiment  is lowered.  Hence,
+#   some care should be taken to avoid this problem.
+
+#   Another difficulty exists in  relation to context sensitive ratings,
+#   or  ratings wrt  a purpose.   One  way to  handle this  would be  to
+#   correlate to  their axiomatic purpose.   For instance, if I  want to
+#   see  Asian women, or  FFM, etc.   Or in  general, if  I want  an NER
+#   program written in Perl, etc.
+
+
